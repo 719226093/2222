@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Test</title>
+
+    <!-- 加载广告脚本 -->
+    <script src='https://whephiwums.com/vignette.min.js' data-zone='8940770' data-sdk='show_8940770'></script>
+    
+    <script>
+        // 模拟点击广告的函数
+        function simulateAdClick() {
+            console.log('Simulating ad click...');
+
+            // 你需要先确保广告已经显示，否则无法模拟点击
+            show_8940770().then(() => {
+                console.log('Ad shown successfully!');
+                // 这里模拟用户点击广告，可以通过模拟事件的方式进行
+                const adElement = document.querySelector('.ad-element-selector'); // 这里需要替换为广告的实际元素选择器
+                if (adElement) {
+                    adElement.click(); // 触发点击事件
+                    console.log('Ad clicked!');
+                } else {
+                    console.log('Ad element not found!');
+                }
+            }).catch(error => {
+                console.error('Error showing ad:', error);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Test Ad Click</h1>
+    <button onclick="simulateAdClick()">Simulate Ad Click</button>
+</body>
+</html>
